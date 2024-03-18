@@ -13,9 +13,12 @@ higest_spend_mon = df["Cost"].max()
 
 print(f"highest_spend is {higest_spend_mon}")
 
-mvp_staff_mon = df.groupby('Staff')['Cost'].sum().reset_index()
+mvp_staff_list_mon = df.groupby('Staff')['Cost'].sum().reset_index()
 
-print(mvp_staff_mon.sort_values(["Cost"], ascending=False).head(1))
+mvp_top = mvp_staff_list_mon.sort_values(["Cost"], ascending=False, ignore_index=True).head(1)
+
+print(f"MVP for Monday is {mvp_top}"   )
+
 
 ##### explode basket for item info, best and worst selling #####
 
@@ -37,9 +40,8 @@ df["Basket"] = df["Basket"].apply(split_basket)
 
 df = df.explode("Basket", ignore_index=False)
 
-
 best_sell_mon = df["Basket"].value_counts().head(1)
-print(f"best_sell_mon is {best_sell_mon}")
+print(f"best sell mon is {best_sell_mon}")
 
-###### WORST SELL MONDAY BELOW ####
-
+worst_sell_mon = df["Basket"].value_counts().tail(1)
+print(f"worst sell mon is {worst_sell_mon}")

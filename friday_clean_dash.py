@@ -37,4 +37,4 @@ b_plot_3 = df1.boxplot(column = 'Transaction ID')
 plt.title("Boxplot for Transaction ID")
 plt.show()
 
-df1.to_excel("./mb_clean_data/friday_cleaned.xlsx")
+# df1.to_excel("./mb_clean_data/friday_cleaned.xlsx")

@@ -29,7 +29,7 @@ df1 = df1.drop(columns=["Till ID"])
 
 # print(df1.describe())
 
-df1.to_excel("./mb_clean_data/tuesday_cleaned.xlsx")
+# df1.to_excel("./mb_clean_data/tuesday_cleaned.xlsx")
 
 
 b_plot = df1.boxplot(column = 'Cost') 

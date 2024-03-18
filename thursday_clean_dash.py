@@ -42,6 +42,6 @@ plt.show()
 ## change outlier
 df1.at[23, "Cost"] = 7
 
-df1.to_excel("./mb_clean_data/thursday_cleaned.xlsx")
+# df1.to_excel("./mb_clean_data/thursday_cleaned.xlsx")
 
 print(df1.describe())
