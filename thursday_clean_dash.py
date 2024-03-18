@@ -20,11 +20,11 @@ df1 = df1.dropna(how="any")
 
 df1 = df1.drop(columns=["Till ID"])
 
-print(df1.head())
+# print(df1.head())
 
-print(df1.info())
+# print(df1.info())
 
-print(df1.describe())
+# print(df1.describe())
 
 b_plot = df1.boxplot(column = 'Cost') 
 plt.title("Boxplot for Cost")

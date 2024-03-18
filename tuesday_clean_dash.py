@@ -23,11 +23,11 @@ df1 = df1.dropna(how="any")
 
 df1 = df1.drop(columns=["Till ID"])
 
-print(df1.head())
+# print(df1.head())
 
-print(df1.info())
+# print(df1.info())
 
-print(df1.describe())
+# print(df1.describe())
 
 df1.to_excel("./mb_clean_data/tuesday_cleaned.xlsx")
 
