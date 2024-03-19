@@ -1,0 +1,11 @@
+
+Total Income : 268.40000000000003
+Highest spend : 11.5
+MVP staff for Monday  Staff  Cost
+0   Ima  67.4
+Best selling item : Basket
+Americano    32
+Name: count, dtype: int64
+Worst selling item : Basket
+Buttered Roll    1
+Name: count, dtype: int64

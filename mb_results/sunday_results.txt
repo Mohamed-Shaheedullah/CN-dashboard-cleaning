@@ -1,0 +1,11 @@
+
+Total Income : 155.7
+Highest spend : 12.1
+MVP staff for sunday    Staff  Cost
+0  Hayley  58.5
+Best selling item : Basket
+Hot Chocolate    18
+Name: count, dtype: int64
+Worst selling item : Basket
+Stroopwafel    1
+Name: count, dtype: int64

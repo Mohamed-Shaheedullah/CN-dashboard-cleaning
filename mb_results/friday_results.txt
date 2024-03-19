@@ -1,0 +1,11 @@
+
+Total Income : 221.1
+Highest spend : 12.5
+MVP staff for friday     Staff  Cost
+0  Charlie  59.4
+Best selling item : Basket
+Tea    33
+Name: count, dtype: int64
+Worst selling item : Basket
+Buttered Roll    1
+Name: count, dtype: int64
