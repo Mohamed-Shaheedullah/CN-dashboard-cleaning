@@ -25,6 +25,12 @@ df1 = df1.drop(columns=["Till ID"])
 
 # print(df1.describe())
 
+#  Some payment methods have different capitalizations************
+
+df1["Payment Method"] = df1["Payment Method"].str.capitalize()
+
+print(df1)
+
 b_plot = df1.boxplot(column = 'Cost') 
 plt.title("Boxplot for Cost")
 plt.show()
@@ -37,4 +43,4 @@ b_plot_3 = df1.boxplot(column = 'Transaction ID')
 plt.title("Boxplot for Transaction ID")
 plt.show()
 
-# df1.to_excel("./mb_clean_data/wednesday_cleaned.xlsx")
+df1.to_excel("./mb_clean_data/wednesday_cleaned.xlsx")

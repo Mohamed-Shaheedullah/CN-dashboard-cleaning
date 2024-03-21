@@ -102,3 +102,38 @@ filename = "./mb_results/sunday_results.txt"
 #     outfile.write("Worst selling item : ")
 #     outfile.write(str(worst_sell_sun))
 #     outfile.write('\n')
+
+
+# Plotting the bar chart
+max_item = all_sold_items.idxmax()
+plt.figure(figsize=(10, 6))
+all_sold_items.plot(kind='bar')
+colors = ['purple' if item == max_item else '#1f77b4' for item in all_sold_items.index]
+plt.bar(all_sold_items.index, all_sold_items.values, color=colors)
+plt.xlabel('Item')
+plt.ylabel('Frequency')
+plt.title('Frequency of Sold Items on Sunday')
+plt.xticks(rotation=45)
+plt.tight_layout() 
+plt.show()
+
+# pie_chart
+color_dict = {
+    'Cash': '#1f77b4',
+    'Credit': 'purple',
+    'Debit': 'blue',
+    'Voucher': 'lightblue'
+}
+labels = payment_methods["Payment Method"]
+sizes = payment_methods["Transaction ID"]
+colors = [color_dict[label] for label in labels] 
+plt.figure(figsize=(10, 8))
+wedges, texts, autotexts = plt.pie(sizes, labels=labels, colors=colors, autopct='%1.1f%%', textprops={'color': 'white'})
+for autotext in autotexts:
+    autotext.set_fontsize(8)
+for text in texts:
+    text.set_color('black')
+    text.set_fontsize(10)  
+plt.title('Payment_Methods on Sunday')
+# plt.savefig('payment pie friday.png')
+plt.show()
