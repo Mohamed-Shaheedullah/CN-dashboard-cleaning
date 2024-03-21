@@ -21,6 +21,23 @@ mvp_top = mvp_staff_list_thur.sort_values(["Cost"], ascending=False, ignore_inde
 
 print(f"MVP for thursday is {mvp_top}"   )
 
+##### for bar chart ################
+payment_methods = df.groupby("Payment Method")["Transaction ID"].count().reset_index()
+
+print(payment_methods.info())
+
+
+payment_types = payment_methods["Payment Method"].to_list()
+
+ax = payment_methods[["Transaction ID"]].plot(kind='bar', title ="Payment Methods", figsize=(10, 6), legend=True, fontsize=12)
+ax.set_xlabel("Payment Method", fontsize=12)
+ax.set_ylabel("Number of Transactions", fontsize=12)
+plt.xticks(range(len(payment_types)), payment_types)
+plt.show()
+# print("Payment Methods")
+# print(payment_methods)
+############### end bar chart ################
+
 
 ##### explode basket for item info, best and worst selling #####
 
@@ -51,27 +68,36 @@ print(f"best sell item thur is {best_sell_thur}")
 worst_sell_thur = df["Basket"].value_counts().tail(1)
 print(f"worst sell item thur is {worst_sell_thur}")
 
+###########  copy to other files
+
+all_sold_items = df["Basket"].value_counts() 
+
+print("All sold items Thursday")
+print(all_sold_items)
+########## end copy ##########################
+
+
 
 ### **********write to file *********
 # actual_time = strftime("%Y-%m-%d %H-%M-%S", gmtime())
 
 filename = "./mb_results/thursday_results.txt"
 
-outfile = open(filename, "w")
-with open(filename, 'a') as outfile:
-    outfile.write('\n')
-    outfile.write("Total Income : ")
-    outfile.write(str(total_income_thur))    
-    outfile.write('\n')
-    outfile.write("Highest spend : ")
-    outfile.write(str(higest_spend_thur))
-    outfile.write('\n')
-    outfile.write("MVP staff for thursday")
-    outfile.write(str(mvp_top))
-    outfile.write('\n')
-    outfile.write("Best selling item : ")
-    outfile.write(str(best_sell_thur))
-    outfile.write('\n')
-    outfile.write("Worst selling item : ")
-    outfile.write(str(worst_sell_thur))
-    outfile.write('\n')
+# outfile = open(filename, "w")
+# with open(filename, 'a') as outfile:
+#     outfile.write('\n')
+#     outfile.write("Total Income : ")
+#     outfile.write(str(total_income_thur))    
+#     outfile.write('\n')
+#     outfile.write("Highest spend : ")
+#     outfile.write(str(higest_spend_thur))
+#     outfile.write('\n')
+#     outfile.write("MVP staff for thursday")
+#     outfile.write(str(mvp_top))
+#     outfile.write('\n')
+#     outfile.write("Best selling item : ")
+#     outfile.write(str(best_sell_thur))
+#     outfile.write('\n')
+#     outfile.write("Worst selling item : ")
+#     outfile.write(str(worst_sell_thur))
+#     outfile.write('\n')

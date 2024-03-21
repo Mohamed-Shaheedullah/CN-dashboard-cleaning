@@ -1,11 +1,11 @@
 
-Total Income : 366.5
-Highest spend : 13.8
-MVP staff for Monday    Staff  Cost
-0  Hayley  82.3
+Total Income : 326.1
+Highest spend : 14.7
+MVP staff for Monday  Staff  Cost
+0  Emma  89.1
 Best selling item : Basket
-Hot Chocolate    37
+Tea    38
 Name: count, dtype: int64
 Worst selling item : Basket
-Muffin    1
+Stroopwafel    1
 Name: count, dtype: int64
